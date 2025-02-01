@@ -5,7 +5,7 @@
 ### Java의 Stack 클래스
 
 ```java
-imort java.util.Stack;
+import java.util.Stack;
 
 Stack<자료형> stack = new Stack<>();
 ```
