@@ -16,3 +16,5 @@
 ### Data Structure
 
 - [Stack(스택)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Stack.md)
+
+- [Queue(큐)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Queue.md)
