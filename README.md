@@ -21,4 +21,5 @@
 
 ### Network
 
-- [네트워크 개요](https://github.com/CHOO-O/CHOO-study/blob/main/Network/Section01.md)
+- [네트워크 개요](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S01.md)
+- [근거리 통신 기술](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S02.md)
