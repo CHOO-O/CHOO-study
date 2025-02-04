@@ -5,21 +5,20 @@
 딱히 글을 예쁘게 쓰진 못합니다...
 <br>
 
----
-
 ### Back-end
 
-- [JVM](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/JVM.md)
+🔹 [JVM](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/JVM.md)
 
 <!-- mvc -->
 
 ### Data Structure
 
-- [Stack(스택)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Stack.md)
+🔹 [Stack(스택)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Stack.md)
 
-- [Queue(큐)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Queue.md)
+🔹 [Queue(큐)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Queue.md)
 
 ### Network
 
-- [네트워크 개요](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S01.md)
-- [근거리 통신 기술](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S02.md)
+🔹 [네트워크 개요](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S01.md)
+
+🔹 [근거리 통신 기술](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S02.md)
