@@ -24,3 +24,5 @@
 🔹 [근거리 통신 기술](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S02.md)
 
 🔹 [데이터 통신](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S03.md)
+
+🔹 [광대역 기술](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S04.md)
