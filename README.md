@@ -26,3 +26,5 @@
 🔹 [데이터 통신](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S03.md)
 
 🔹 [광대역 기술](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S04.md)
+
+🔹 [OSI 7계층](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P02-S01.md)
