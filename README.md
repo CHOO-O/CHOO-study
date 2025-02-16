@@ -42,3 +42,5 @@
 🔹 [DNS 서버](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P03-S04.md)
 
 🔹 [액티브 디렉터리](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P03-S05.md)
+
+🔹 [FTP 서버](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P03-S06.md)
