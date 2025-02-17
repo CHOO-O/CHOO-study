@@ -17,7 +17,7 @@
 
 🔹 [Queue(큐)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Queue.md)
 
-### Network
+### 네트워크 관리사 2급 대비
 
 🔹 [네트워크 개요](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P01-S01.md)
 
@@ -44,3 +44,5 @@
 🔹 [액티브 디렉터리](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P03-S05.md)
 
 🔹 [FTP 서버](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P03-S06.md)
+
+🔹 [리눅스(Linux)](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P03-S07.md)
