@@ -13,6 +13,8 @@
 
 🔹 [시간 복잡도](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Time-complexity.md)
 
+🔹 [구간 합](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Prefix-sum.md)
+
 ### Data Structure
 
 🔹 [Stack(스택)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Stack.md)
