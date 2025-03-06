@@ -15,11 +15,15 @@
 
 🔹 [구간 합](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Prefix-sum.md)
 
+🔹 [투 포인터](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Two-pointer.md)
+
 ### Data Structure
 
 🔹 [Stack(스택)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Stack.md)
 
 🔹 [Queue(큐)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Queue.md)
+
+🔹 [Deque(덱)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Deque.md)
 
 ### 네트워크 관리사 2급 대비
 
