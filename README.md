@@ -60,3 +60,5 @@
 🔹 [FTP 서버](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P03-S06.md)
 
 🔹 [리눅스(Linux)](https://github.com/CHOO-O/CHOO-study/blob/main/Network/P03-S07.md)
+
+🔹 [실기 준비](https://github.com/CHOO-O/CHOO-study/blob/main/Network/실기.md)
