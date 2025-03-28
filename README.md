@@ -17,6 +17,10 @@
 
 🔹 [투 포인터](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Two-pointer.md)
 
+🔹 [버블 정렬](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Bubble-sort.md)
+
+🔹 [깊이 우선 탐색(DFS: depth-first search)](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/DFS.md)
+
 ### Data Structure
 
 🔹 [Stack(스택)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Stack.md)
