@@ -62,8 +62,9 @@ jobs:
           mkdir -p badge
           cat <<EOF > badge/Latest-post.svg
           <svg xmlns="http://www.w3.org/2000/svg" width="440" height="20">
-            <rect width="90" height="20" fill="#0c1014" rx = "4"/>
-            <rect x="80" width="10" height="20" fill="#0c1014"/>
+            <a xlink:href="https://github.com/CHOO-O/CHOO-study/blob/main/${{ steps.extract.outputs.last_post }}" target="_blank">
+            <rect width="90" height="20" fill="#555" rx = "4"/>
+            <rect x="80" width="20" height="20" fill="#555"/>
             <rect x="90" width="10" height="20" fill="#2aa890"/>
             <rect x="90" width="350" height="20" fill="#2aa889" rx = "4"/>
             <text x="10" y="14" fill="#fff" font-family="Verdana" font-size="11">Latest posting</text>
@@ -90,43 +91,4 @@ jobs:
           else
             git commit -m "Generate Latest-post.svg"
             git push https://x-access-token:${{ secrets.BLOG_BADGE_GENERATE_TOKEN }}@github.com/CHOO-O/CHOO-study.git HEAD:main
-          fi
-
-      # 03-06. README가 이미 최신 링크면 이후 작업 생략
-      - name: Check if README already has latest link
-        id: check-readme
-        if: steps.extract.outputs.skip != 'true'
-        run: |
-          curl -s https://raw.githubusercontent.com/CHOO-O/CHOO-O/main/README.md | grep -q "${{ steps.extract.outputs.last_post }}"
-          if [ $? -eq 0 ]; then
-            echo "already_updated=true" >> $GITHUB_OUTPUT
-            echo "❎ README.md 최신 상태"
-          else
-            echo "already_updated=false" >> $GITHUB_OUTPUT
-            echo "✅ README.md 업데이트 필요"
-          fi
-
-      # 03-07. README 수정을 위해 프로필 레포 클론
-      - name: Clone profile repo
-        if: steps.extract.outputs.skip != 'true' && steps.check-readme.outputs.already_updated != 'true'
-        run: |
-          git clone https://github.com/CHOO-O/CHOO-O.git profile-repo
-
-      # 03-08. README.md 링크 갱신
-      - name: Update README in profile repo
-        if: steps.extract.outputs.skip != 'true' && steps.check-readme.outputs.already_updated != 'true'
-        run: |
-          cd profile-repo
-
-          sed -i 's|](https://github.com/.*/blob/.*/LATEST_MD.md)|](https://github.com/CHOO-O/CHOO-study/blob/main/${{ steps.extract.outputs.last_post }})|' README.md
-
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add README.md
-
-          if git diff --cached --quiet; then
-            echo "❎ README.md 변경 사항 없음"
-          else
-            git commit -m "✅ README.md 업데이트 완료"
-            git push https://x-access-token:${{ secrets.BLOG_BADGE_GENERATE_TOKEN }}@github.com/CHOO-O/CHOO-O.git HEAD:main
           fi
