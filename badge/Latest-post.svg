@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="20">
-  <a xlink:href="https://github.com/CHOO-O/CHOO-study/blob/main/GitHub/custom-badge.md" target="_blank">
   <rect width="90" height="20" fill="#555" rx = "4"/>
   <rect x="80" width="20" height="20" fill="#555"/>
   <rect x="90" width="10" height="20" fill="#2aa890"/>
