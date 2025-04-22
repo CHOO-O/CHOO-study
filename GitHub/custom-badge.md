@@ -29,3 +29,5 @@
 
 1. 레포지토리에 뱃지 svg파일을 저장할 폴더 생성 (`/badge`)
 2. Personal Access Token(Classic) 생성 (repo, workflow 권한 부여)
+
+### 발생했던 문제와 해결 과정
