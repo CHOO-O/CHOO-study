@@ -81,7 +81,7 @@ jobs:
             echo "❎ 최근 업데이트 포스트 변경 사항 없음"
           else
             git commit -m "Generate Latest-post.svg"
-            git push origin HEAD
+            git push https://x-access-token:${{ secrets.BLOG_BADGE_GENERATE_TOKEN }}@github.com/CHOO-O/CHOO-study.git HEAD:main
           fi
 
       # 03-06. README가 이미 최신 링크면 이후 작업 생략
