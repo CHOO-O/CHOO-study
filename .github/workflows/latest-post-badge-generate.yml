@@ -17,6 +17,8 @@ jobs:
       - name: Checkout blog repository
         uses: actions/checkout@v3
         with:
+          repository: CHOO-O/CHOO-study
+          token: ${{ secrets.BLOG_BADGE_GENERATE_TOKEN }}
           fetch-depth: 0
 
       # 03-03. 가장 최근 수정된 .md파일 경로, 제목, 날짜 추출
