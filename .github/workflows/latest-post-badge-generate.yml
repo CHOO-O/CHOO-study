@@ -1,0 +1,122 @@
+# 01. 워크플로우 이름 설정
+name: Generate new latest post badge
+
+# 02. 트리거 설정: `main`브랜치에서 `push`이벤트 발생 시 이 워크플로우가 실행됨
+on:
+  push:
+    branches: [main]
+
+# 03. jobs 정의
+jobs:
+  # 03-01. job의 이름, 리눅스 가상 머신
+  generate-badge:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 03-02. CHOO-O study 레포지토리의 코드 체크아웃
+      - name: Checkout blog repository
+        uses: actions/checkout@v3
+
+      # 03-03. 가장 최근 수정된 .md파일 경로, 제목, 날짜 추출
+      - name: Extract latest .md file, title and date
+        id: extract
+        # GitHub Actions에서 수행될 bash script 작성
+        # FILE ~
+        # 가장 최근 커밋에서 수정된 파일 중 .md파일만 추출
+        # README.md, Rules.md, badge폴더 아래 파일은 예외처리하도록 함
+        # if ~
+        # 해당하는 .md파일이 없을 시 로그 출력, 이후 step 건너뜀
+        # else ~
+        # 해당하는 .md파일의 첫 줄을 읽어와 '# '를 제거하여 제목만 추출
+        # 날짜 YY/MM/DD 형식으로 추출
+        run: |
+          FILE=$(git diff-tree --no-commit-id --name-only -r HEAD |
+            grep '\.md$' |
+            grep -v -E 'README\.md|Rules\.md|^badge/' |
+            head -n 1 || true)
+
+          if [ -z "$FILE" ]; then
+            echo "❎ 해당하는 .md 파일 없음"
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            TITLE=$(head -n 1 "$FILE" | sed 's/^#* *//')
+            COMMIT_DATE=$(git log -1 --date=format:"%Y/%m/%d" --pretty=%cd)
+
+            echo "✅ 최근 업데이트 포스트: $FILE"
+            echo "✅ 포스트 제목 추출: $TITLE"
+            echo "✅ 커밋 날짜: $COMMIT_DATE"
+
+            echo "last_post=$FILE" >> $GITHUB_OUTPUT
+            echo "title_line=$TITLE" >> $GITHUB_OUTPUT
+            echo "commit_date=$COMMIT_DATE" >> $GITHUB_OUTPUT
+          fi
+
+      # 03-04. svg 뱃지 파일 생성
+      - name: Generate SVG badge
+        if: steps.extract.outputs.skip != 'true'
+        run: |
+          mkdir -p badge
+          cat <<EOF > badge/Latest-post.svg
+          <svg xmlns="http://www.w3.org/2000/svg" width="440" height="20">
+            <rect width="90" height="20" fill="#0c1014" rx = "4"/>
+            <rect x="80" width="10" height="20" fill="#0c1014"/>
+            <rect x="90" width="10" height="20" fill="#2aa890"/>
+            <rect x="90" width="350" height="20" fill="#2aa889" rx = "4"/>
+            <text x="10" y="14" fill="#fff" font-family="Verdana" font-size="11">Latest posting</text>
+            <text x="100" y="14" fill="#fff" font-family="Verdana" font-size="11">${{ steps.extract.outputs.commit_date }} - ${{ steps.extract.outputs.title_line }}</text>
+          </svg>
+          EOF
+
+      # 03-05. 생성된 svg 뱃지 파일 choo-study/badge에 업로드
+      - name: Commit SVG badge to blog repo
+        if: steps.extract.outputs.skip != 'true'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add badge/Latest-post.svg
+
+          if git diff --cached --quiet; then
+            echo "❎ 최근 업데이트 포스트 변경 사항 없음"
+          else
+            git commit -m "Generate Latest-post.svg"
+            git push origin HEAD
+          fi
+
+      # 03-06. README가 이미 최신 링크면 이후 작업 생략
+      - name: Check if README already has latest link
+        id: check-readme
+        if: steps.extract.outputs.skip != 'true'
+        run: |
+          curl -s https://raw.githubusercontent.com/CHOO-O/CHOO-O/main/README.md | grep -q "${{ steps.extract.outputs.last_post }}"
+          if [ $? -eq 0 ]; then
+            echo "already_updated=true" >> $GITHUB_OUTPUT
+            echo "❎ README.md 최신 상태"
+          else
+            echo "already_updated=false" >> $GITHUB_OUTPUT
+            echo "✅ README.md 업데이트 필요"
+          fi
+
+      # 03-07. README 수정을 위해 프로필 레포 클론
+      - name: Clone profile repo
+        if: steps.extract.outputs.skip != 'true' && steps.check-readme.outputs.already_updated != 'true'
+        run: |
+          git clone https://github.com/CHOO-O/CHOO-O.git profile-repo
+
+      # 03-08. README.md 링크 갱신
+      - name: Update README in profile repo
+        if: steps.extract.outputs.skip != 'true' && steps.check-readme.outputs.already_updated != 'true'
+        run: |
+          cd profile-repo
+
+          sed -i 's|](https://github.com/.*/blob/.*/LATEST_MD.md)|](https://github.com/CHOO-O/CHOO-study/blob/main/${{ steps.extract.outputs.last_post }})|' README.md
+
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "❎ README.md 변경 사항 없음"
+          else
+            git commit -m "✅ README.md 업데이트 완료"
+            git push https://x-access-token:${{ secrets.BLOG_BADGE_GENERATE_TOKEN }}@github.com/CHOO-O/CHOO-O.git HEAD:main
+          fi
