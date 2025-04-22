@@ -16,8 +16,8 @@
 
 1. `main` 브랜치에 `push` 작업이 일어날 때, 최근 커밋에서 변경된 `.md` 파일이 있는지 탐색한다.
 2. 있을 경우 해당 파일의 첫 번째 줄을 추출해 제목을 만들고, 커밋 날짜를 `YYYY/MM/DD` 형식으로 추출한다.
-3. 이를 반영한 `svg` 파일을 생성해 `CHOO-study/badge`에 저장한다.
-4. `svg`파일로 생성한 뱃지를 사용하는 `README.md`를 자동으로 수정하게 한다.
+3. 이를 반영한 `svg` 파일을 생성해 `CHOO-study/badge`에 저장한다.<br>`<a>태그`를 이용해 누르면 새 탭으로 해당 포스트가 열리도록 한다.
+4. 저장된 `svg` 파일을 `CHOO-O/README.md` 에서 가져온다.
 
 ### 예외처리할 부분
 
@@ -28,4 +28,4 @@
 ### 과정
 
 1. 레포지토리에 뱃지 svg파일을 저장할 폴더 생성 (`/badge`)
-2. Personal Access Token 생성
+2. Personal Access Token(Classic) 생성 (repo, workflow 권한 부여)
