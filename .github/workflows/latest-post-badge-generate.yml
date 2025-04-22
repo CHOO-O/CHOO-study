@@ -16,6 +16,8 @@ jobs:
       # 03-02. CHOO-O study 레포지토리의 코드 체크아웃
       - name: Checkout blog repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       # 03-03. 가장 최근 수정된 .md파일 경로, 제목, 날짜 추출
       - name: Extract latest .md file, title and date
@@ -30,7 +32,7 @@ jobs:
         # 해당하는 .md파일의 첫 줄을 읽어와 '# '를 제거하여 제목만 추출
         # 날짜 YY/MM/DD 형식으로 추출
         run: |
-          FILE=$(git diff-tree --no-commit-id --name-only -r HEAD |
+          FILE=$(git show --pretty="" --name-only HEAD |
             grep '\.md$' |
             grep -v -E 'README\.md|Rules\.md|^badge/' |
             head -n 1 || true)
