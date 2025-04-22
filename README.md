@@ -5,6 +5,10 @@
 딱히 글을 예쁘게 쓰진 못합니다...
 <br>
 
+### GitHub
+
+🔹 [커스텀 뱃지 만들기](https://github.com/CHOO-O/CHOO-study/blob/main/GitHub/custom-badge.md)
+
 ### Back-end
 
 🔹 [JVM](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/JVM.md)
