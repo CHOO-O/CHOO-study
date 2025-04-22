@@ -31,3 +31,5 @@
 2. Personal Access Token(Classic) 생성 (repo, workflow 권한 부여)
 
 ### 발생했던 문제와 해결 과정
+
+svg a태그 안됨
