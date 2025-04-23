@@ -39,10 +39,6 @@ jobs:
             grep -v -E 'README\.md|Rules\.md|^badge/' |
             head -n 1 || true)
 
-          if [ -z "$FILE" ]; then
-            echo "❎ 해당하는 .md 파일 없음"
-            echo "skip=true" >> $GITHUB_OUTPUT
-          else
             TITLE=$(head -n 1 "$FILE" | sed 's/^#* *//')
             COMMIT_DATE=$(git log -1 --date=format:"%Y/%m/%d" --pretty=%cd)
 
