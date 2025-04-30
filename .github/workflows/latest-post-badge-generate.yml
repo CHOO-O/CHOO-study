@@ -49,7 +49,6 @@ jobs:
             echo "last_post=$FILE" >> $GITHUB_OUTPUT
             echo "title_line=$TITLE" >> $GITHUB_OUTPUT
             echo "commit_date=$COMMIT_DATE" >> $GITHUB_OUTPUT
-          fi
 
       # 03-04-01. svg 뱃지 파일 생성
       - name: Generate SVG badge
