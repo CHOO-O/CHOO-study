@@ -40,7 +40,7 @@ jobs:
             head -n 1 || true)
 
           if [ -z "$FILE" ] || [ ! -f "$FILE" ]; then
-            echo "❎ 최근 커밋에 유효한 .md 파일 변경이 없음
+            echo "❎ 최근 커밋에 유효한 .md 파일 변경이 없음"
             echo "skip=true" >> $GITHUB_OUTPUT
             exit 0
           fi
