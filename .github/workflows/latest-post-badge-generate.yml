@@ -39,16 +39,23 @@ jobs:
             grep -v -E 'README\.md|Rules\.md|^badge/' |
             head -n 1 || true)
 
-            TITLE=$(head -n 1 "$FILE" | sed 's/^#* *//')
-            COMMIT_DATE=$(git log -1 --date=format:"%Y/%m/%d" --pretty=%cd)
+          if [ -z "$FILE" ] || [ ! -f "$FILE" ]; then
+            echo "❎ 최근 커밋에 유효한 .md 파일 변경이 없음
+            echo "skip=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
 
-            echo "✅ 최근 업데이트 포스트: $FILE"
-            echo "✅ 포스트 제목 추출: $TITLE"
-            echo "✅ 커밋 날짜: $COMMIT_DATE"
+          TITLE=$(head -n 1 "$FILE" | sed 's/^#* *//')
+          COMMIT_DATE=$(git log -1 --date=format:"%Y/%m/%d" --pretty=%cd)
 
-            echo "last_post=$FILE" >> $GITHUB_OUTPUT
-            echo "title_line=$TITLE" >> $GITHUB_OUTPUT
-            echo "commit_date=$COMMIT_DATE" >> $GITHUB_OUTPUT
+          echo "✅ 최근 업데이트 포스트: $FILE"
+          echo "✅ 포스트 제목 추출: $TITLE"
+          echo "✅ 커밋 날짜: $COMMIT_DATE"
+
+          echo "last_post=$FILE" >> $GITHUB_OUTPUT
+          echo "title_line=$TITLE" >> $GITHUB_OUTPUT
+          echo "commit_date=$COMMIT_DATE" >> $GITHUB_OUTPUT
+          echo "skip=false" >> $GITHUB_OUTPUT
 
       # 03-04-01. svg 뱃지 파일 생성
       - name: Generate SVG badge
@@ -57,10 +64,10 @@ jobs:
           mkdir -p badge
           cat <<EOF > badge/Latest-post.svg
           <svg xmlns="http://www.w3.org/2000/svg" width="440" height="20">
-            <rect width="90" height="20" fill="#555" rx = "4"/>
+            <rect width="90" height="20" fill="#555" rx="4"/>
             <rect x="80" width="20" height="20" fill="#555"/>
             <rect x="90" width="10" height="20" fill="#2aa890"/>
-            <rect x="90" width="350" height="20" fill="#2aa889" rx = "4"/>
+            <rect x="90" width="350" height="20" fill="#2aa889" rx="4"/>
             <text x="10" y="14" fill="#fff" font-family="Verdana" font-size="11">Latest posting</text>
             <text x="100" y="14" fill="#fff" font-family="Verdana" font-size="11">${{ steps.extract.outputs.commit_date }} - ${{ steps.extract.outputs.title_line }}</text>
           </svg>
