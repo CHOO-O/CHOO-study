@@ -39,3 +39,7 @@
 
 일단은 GPT의 도움과 함께 어떻게든 만들긴 했다!<br>
 하지만 제대로 되는 듯 하다가도 오류가 발생하고 있는걸 보니... 꾸준히 수정을 해 줘야 할 것 같다...
+
+🔗 [CHOO-study의 workflow](https://github.com/CHOO-O/CHOO-study/blob/main/.github/workflows/latest-post-badge-generate.yml)
+
+🔗 [CHOO-O의 workflow](https://github.com/CHOO-O/CHOO-O/blob/main/.github/workflows/update-badge.yml)
