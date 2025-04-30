@@ -99,3 +99,12 @@ jobs:
             git commit -m "Generate badge and link"
             git push https://x-access-token:${{ secrets.BLOG_BADGE_GENERATE_TOKEN }}@github.com/CHOO-O/CHOO-study.git HEAD:main
           fi
+
+      # 03-06. 새로운 뱃지, 링크가 업데이트되면 기본 레포지토리의 workflow가 수행될 수 있게끔 하기
+      - name: Trigger profile repo workflow
+        if: steps.extract.outputs.skip != 'true'
+        run: |
+          curl -X POST https://api.github.com/repos/CHOO-O/CHOO-O/dispatches \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.BLOG_BADGE_GENERATE_TOKEN }}" \
+            -d '{"event_type": "badge-updated"}'
