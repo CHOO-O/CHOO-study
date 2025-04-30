@@ -25,6 +25,8 @@
 
 🔹 [깊이 우선 탐색(DFS: depth-first search)](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/DFS.md)
 
+🔹 [유클리드 호제법](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Euclidean.md)
+
 ### Data Structure
 
 🔹 [Stack(스택)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Stack.md)
