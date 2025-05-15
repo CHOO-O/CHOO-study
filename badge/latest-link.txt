@@ -1,1 +1,1 @@
-https://github.com/CHOO-O/CHOO-study/blob/main/GitHub/custom-badge.md
+https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Brute-force.md
