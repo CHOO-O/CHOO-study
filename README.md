@@ -27,6 +27,8 @@
 
 🔹 [유클리드 호제법](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Euclidean.md)
 
+🔹 [브루트 포스](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Brute-force.md)
+
 ### Data Structure
 
 🔹 [Stack(스택)](https://github.com/CHOO-O/CHOO-study/blob/main/Data-structure/Stack.md)
