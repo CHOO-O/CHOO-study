@@ -9,6 +9,10 @@
 
 🔹 [커스텀 뱃지 만들기](https://github.com/CHOO-O/CHOO-study/blob/main/GitHub/custom-badge.md)
 
+### CS 기초
+
+🔹 [비트 연산](https://github.com/CHOO-O/CHOO-study/blob/main/CS/Bitwise-operation.md)
+
 ### Back-end
 
 🔹 [JVM](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/JVM.md)
