@@ -13,9 +13,15 @@
 
 🔹 [비트 연산](https://github.com/CHOO-O/CHOO-study/blob/main/CS/Bitwise-operation.md)
 
+🔹 [프레임워크](https://github.com/CHOO-O/CHOO-study/blob/main/CS/Framework.md)
+
 ### Back-end
 
 🔹 [JVM](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/JVM.md)
+
+<!-- 🔹 [Spring Framework](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/Spring-framework.md) -->
+
+<!-- 🔹 [Spring Boot](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/Spring-boot.md) -->
 
 ### Algorithm
 
@@ -25,7 +31,7 @@
 
 🔹 [투 포인터](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Two-pointer.md)
 
-🔹 [버블 정렬](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Bubble-sort.md)
+<!-- 🔹 [버블 정렬](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/Bubble-sort.md) -->
 
 🔹 [깊이 우선 탐색(DFS: depth-first search)](https://github.com/CHOO-O/CHOO-study/blob/main/Algorithm/DFS.md)
 
