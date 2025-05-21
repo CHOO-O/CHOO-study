@@ -38,7 +38,7 @@ public class OrderService {
     @Autowired // 필요한 객체를 스프링이 자동으로 주입하게 한다.
     public OrderService(OrderRepository orderRepository) {
         /*
-          여기서 new OrderRepository()처럼 직접 객체를 만들지 않았음음에도 사용할 수 있는 이유는,
+          여기서 new OrderRepository()처럼 직접 객체를 만들지 않았음에도 사용할 수 있는 이유는,
           스프링이 OrderRepository 객체를 대신 생성해서 이 자리에 넣어주기 때문이다.
         */
         this.orderRepository = orderRepository;
