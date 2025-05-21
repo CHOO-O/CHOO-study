@@ -19,7 +19,7 @@
 
 🔹 [JVM](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/JVM.md)
 
-<!-- 🔹 [Spring Framework](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/Spring-framework.md) -->
+🔹 [Spring Framework](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/Spring-framework.md)
 
 <!-- 🔹 [Spring Boot](https://github.com/CHOO-O/CHOO-study/blob/main/Back-end/Spring-boot.md) -->
 
